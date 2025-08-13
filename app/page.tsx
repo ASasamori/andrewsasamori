@@ -1,5 +1,3 @@
-import { BlogPosts } from 'app/components/posts'
-
 export default function Page() {
   return (
     <section>
@@ -18,9 +16,6 @@ export default function Page() {
           <a href="https://www.strava.com/athletes/102980625" target="_blank" rel="noopener noreferrer" className="underline text-sky-500">Strava</a>!
         </p>
       </div>
-      {/* <div className="mt-6">
-        <BlogPosts />
-      </div> */}
     </section>
   )
 }
