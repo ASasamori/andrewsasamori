@@ -1,11 +1,6 @@
-import Image from 'next/image'
-import { getRandomImage } from './lib/random-image'
-import { CaptionWithLinks } from './components/caption-with-links'
+import { RandomImageClient } from './components/random-image-client'
 
 export default function Page() {
-  // Get a random image on each page load
-  const randomImageData = getRandomImage()
-
   return (
     <section>
       {/* <h1 className="mb-6 text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
@@ -25,26 +20,7 @@ export default function Page() {
       </div>
       
       {/* Random Image */}
-      <div className="mt-8 flex flex-col items-center">
-        <Image
-          src={randomImageData.src}
-          alt="Random gallery image"
-          width={600}
-          height={400}
-          className="max-w-full h-auto object-contain rounded-lg shadow-lg"
-          priority
-        />
-        {/* Caption (only shows if image has one) */}
-        {randomImageData.caption && (
-          <p className="mt-3 text-sm text-gray-600 dark:text-gray-400 text-center">
-            <CaptionWithLinks 
-              caption={randomImageData.caption}
-              caption2={randomImageData.caption2}
-              people={randomImageData.people}
-            />
-          </p>
-        )}
-      </div>
+      <RandomImageClient />
     </section>
   )
 }
