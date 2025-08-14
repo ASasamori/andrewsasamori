@@ -2,14 +2,18 @@ import Link from 'next/link'
 
 const navItems = {
   '/': {
-    name: 'home',
+    name: 'Andrew Sasamori',
   },
-  '/blog': {
-    name: 'blog',
+  '/second_brain': {
+    name: 'Second Brain',
   },
-  'https://vercel.com/templates/next.js/portfolio-starter-kit': {
-    name: 'deploy',
+   '/projects': {
+    name: 'Projects',
   },
+  '/Media': {
+    name: 'Media',
+  },  
+  
 }
 
 export function Navbar() {
@@ -38,3 +42,9 @@ export function Navbar() {
     </aside>
   )
 }
+// - Digital Garden
+//     - Accomplishments
+// - Japanese Version On
+// - Projects
+// - Quotes
+// - Media
