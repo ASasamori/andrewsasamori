@@ -1,7 +1,9 @@
 import { notFound } from 'next/navigation'
 import { getGardenBySlug, getGardenSlugs } from '../../lib/api'
 import { remark } from 'remark'
-import html from 'remark-html'
+import remarkRehype from 'remark-rehype'
+import rehypeRaw from 'rehype-raw'
+import rehypeStringify from 'rehype-stringify'
 
 interface GardenPageProps {
   params: Promise<{
@@ -32,13 +34,15 @@ export default async function GardenPage({ params }: GardenPageProps) {
     )
     
     const processedContent = await remark()
-      .use(html)
-      .process(processedMarkdown)
+    .use(remarkRehype, { allowDangerousHtml: true })
+    .use(rehypeRaw)
+    .use(rehypeStringify)
+    .process(processedMarkdown)
     const contentHtml = processedContent.toString()
 
     return (
       <article className="w-full max-w-4xl mx-auto">
-        <header className="mb-8">
+        <header>
           <div className="space-y-4">
             
             {gardenItem.title && (
@@ -64,9 +68,13 @@ export default async function GardenPage({ params }: GardenPageProps) {
             )}
           </div>
         </header>
-
         <div 
-          className="w-full prose prose-lg dark:prose-invert max-w-none text-left [&_a:hover]:text-sky-600 [&_a]:transition-colors [&_a]:underline"
+          className="w-full prose prose-lg dark:prose-invert max-w-none text-left 
+          [&_a:hover]:text-sky-600 [&_a]:transition-colors [&_a]:underline 
+          [&_blockquote]:border-l-4 [&_blockquote]:border-blue-500 [&_blockquote]:pl-4 [&_blockquote]:italic [&_blockquote]:text-gray-600 [&_blockquote]:dark:text-gray-400
+          [&_div]:!mb-2 [&_div]:!mt-1 [&_p]:!mb-2 [&_p]:!mt-1 
+          [&_h1]:!mb-1 [&_h1]:!mt-6 [&_h2]:!mb-1 [&_h2]:!mt-5 [&_h3]:!mb-0 [&_h3]:!mt-4 [&_h4]:!mb-0 [&_h4]:!mt-0 [&_h5]:!mb-0 [&_h5]:!mt-0
+          "
           dangerouslySetInnerHTML={{ __html: contentHtml }}
         />
       </article>

@@ -9,18 +9,16 @@ const gardenSections: GardenSection[] = [
   {
     icon: "🏫",
     items : [
-      "Test", 
-      "Professors"
+      "Transcript", 
     ]
   },
   {
     icon: "🎖️", 
     items: [
-      "Test 2"
     ]
   },
   {
-    icon: "/icons/lofi.jpg",
+    icon: "🪢",
     items: [
       "",
       ""

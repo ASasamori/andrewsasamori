@@ -30,6 +30,7 @@ export interface GardenData {
   date?: string
   category?: string
   content: string
+  ending?: string
 }
 
 export function getProjectSlugs() {
@@ -84,6 +85,7 @@ export function getGardenBySlug(slug: string): GardenData {
     description: data.description,
     date: data.date,
     category: data.category,
+    ending: data.ending,
     content,
   }
 }

@@ -1,3 +1,4 @@
+import Footer from './components/footer'
 import { RandomImageClient } from './components/random-image-client'
 
 export const metadata = {
@@ -26,6 +27,7 @@ export default function Page() {
       </div>
 
       <RandomImageClient />
+      <Footer></Footer>
     </section>
   )
 }
