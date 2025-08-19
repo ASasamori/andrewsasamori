@@ -65,11 +65,7 @@ export type { Person, ImageData }
 
 // Alternative: if you want consistent randomness per request in SSR
 export function getRandomImageSeeded(seed?: string): string {
-  const images = [
-    '/images/placeholder-1.svg',
-    '/images/placeholder-2.svg',
-    '/images/placeholder-3.svg'
-  ]
+  const images = []
   
   // Simple seeded random - you could use a more sophisticated approach
   const seedValue = seed ? seed.split('').reduce((a, b) => a + b.charCodeAt(0), 0) : Date.now()

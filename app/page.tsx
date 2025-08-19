@@ -1,5 +1,11 @@
 import { RandomImageClient } from './components/random-image-client'
 
+export const metadata = {
+  icons: {
+    icon: '/icons/vibe.png'
+  }
+}
+
 export default function Page() {
   return (
     <section>
@@ -18,8 +24,7 @@ export default function Page() {
           <a href="https://www.strava.com/athletes/102980625" target="_blank" rel="noopener noreferrer" className="underline text-sky-500">Strava</a>!
         </p>
       </div>
-      
-      {/* Random Image */}
+
       <RandomImageClient />
     </section>
   )

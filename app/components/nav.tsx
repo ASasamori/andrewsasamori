@@ -4,8 +4,8 @@ const navItems = {
   '/': {
     name: 'Andrew Sasamori',
   },
-  '/second_brain': {
-    name: 'Second Brain',
+  '/digital_garden': {
+    name: 'Digital Garden',
   },
    '/projects': {
     name: 'Projects',
@@ -46,5 +46,4 @@ export function Navbar() {
 //     - Accomplishments
 // - Japanese Version On
 // - Projects
-// - Quotes
 // - Media
