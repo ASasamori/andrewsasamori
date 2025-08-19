@@ -27,7 +27,6 @@ export default function Page() {
       </div>
 
       <RandomImageClient />
-      <Footer></Footer>
     </section>
   )
 }
