@@ -23,6 +23,15 @@ export interface ProjectData {
   content: string
 }
 
+export interface GardenData {
+  slug: string
+  title?: string
+  description: string
+  date?: string
+  category?: string
+  content: string
+}
+
 export function getProjectSlugs() {
   return fs.readdirSync(projectsDirectory).map(name => name.replace(/\.md$/, ''))
 }
@@ -56,4 +65,32 @@ export function getAllProjects(): ProjectData[] {
       return new Date(project2.date).getTime() - new Date(project1.date).getTime()
     })
   return projects
+}
+
+// Digital Garden functions
+export function getGardenSlugs() {
+  return fs.readdirSync(digitalGardenDirectory).map(name => name.replace(/\.md$/, ''))
+}
+
+export function getGardenBySlug(slug: string): GardenData {
+  const realSlug = slug.replace(/\.md$/, '')
+  const fullPath = join(digitalGardenDirectory, `${realSlug}.md`)
+  const fileContents = fs.readFileSync(fullPath, 'utf8')
+  const { data, content } = matter(fileContents)
+
+  return {
+    slug: realSlug,
+    title: data.title,
+    description: data.description,
+    date: data.date,
+    category: data.category,
+    content,
+  }
+}
+
+export function getAllGardenItems(): GardenData[] {
+  const slugs = getGardenSlugs()
+  const gardenItems = slugs
+    .map((slug) => getGardenBySlug(slug))
+  return gardenItems
 }

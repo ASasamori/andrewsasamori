@@ -1,3 +1,5 @@
+import DigitalGardenGrid from '../components/digital-garden-grid'
+
 export const metadata = {
     icons: {
         icon: '/icons/garden.svg'
@@ -7,7 +9,7 @@ export const metadata = {
 export default function Page() {
     return (
         <section>
-            
+            <DigitalGardenGrid />
         </section>
     )
 }

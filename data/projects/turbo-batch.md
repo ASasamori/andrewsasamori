@@ -1,5 +1,5 @@
 ---
-title: "Asynch Batch Processing Solution for Cloud-LLMs"
+title: "Turbo Batch"
 description: "Super fun project that made me really learn Google Cloud infrastructure"
 status: "completed"
 imageUrl: "/icons/turbo_batch.png"

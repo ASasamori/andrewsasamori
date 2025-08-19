@@ -46,6 +46,7 @@ export function getRandomImage(): ImageData {
     {
       src: '/images/ts4.jpeg',
       caption: 'With Arjun P., Gaurav, Tony, Arjun S., and Avi',
+      caption2: 'Faithful to the Bay!',
       people: [
         {name: 'Arjun P.', url:'https://www.linkedin.com/in/arjun-patrawala/'},
         {name: 'Gaurav', url:'https://www.linkedin.com/in/gaurav-chakravarty/'},
