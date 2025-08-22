@@ -9,7 +9,7 @@ const gardenSections: GardenSection[] = [
   {
     icon: "🏫",
     items : [
-      "Transcript", 
+      "University Coursework", 
     ]
   },
   {

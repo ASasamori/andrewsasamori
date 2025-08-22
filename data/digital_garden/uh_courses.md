@@ -1,52 +1,45 @@
 ---
-title: "University of Hawaii coursework"
+title: "University of Hawaii Coursework"
 ---
 
 # Fall 2021
 
-### BOT 107: Plants, People, and Culture
-<div class="text-gray-400 mb-0 mt-0 text-base">George Wong, Fall 2021</div>
+@@BOT 107: Plants, People, and Culture|George Wong|/files/1/BOT107Fall21.pdf@@
 
-### CHEM 161 + L: General Chemistry *(and Lab)*
-<div class="text-gray-400 mb-0 mt-0 text-base">Amy Fuller, Fall 2021</div>
+@@CHEM 161 + L: General Chemistry *(and Lab)*|Amy Fuller|/files/1/CHEM161Fall21.pdf@@
 
-### COMG 251: Principles of Eff Public Speaking
-<div class="text-gray-400 mb-0 mt-0 text-base">Jaymian Urashima, Fall 2021</div>
+@@COMG 251: Principles of Eff Public Speaking|Jaymian Urashima|/files/1/COMG251Fall21.pdf@@
 
-In class we were tasked to present one person who we thought was a big influence in our lives. I chose Elon Musk. Times have changed obviously
+skyblue In class we were tasked to present one person who we thought was a big influence in our lives. I chose Elon Musk. Times have changed obviously skyblue
 
-### ENG 100: Composition 1 
-<div class="text-gray-400 mb-0 mt-0 text-base">Eric Lauritzen, Fall 2021</div>
+@@ENG 100: Composition 1|Eric Lauritzen|/files/1/ENG100Fall21.pdf@@
 
-### Concert Band
+@@Concert Band||@@
 
 ---
 
 # Spring 2022
 
-> I started to dgaf this semester
+skyblue I started to dgaf this semester skyblue
 
-### CHEM 162 + L: General Chemistry 2 *(and Lab)*
-<div class="text-gray-400 mb-0 mt-0 text-base">Daniel Brayton</div>
+@@CHEM 162 + L: General Chemistry 2 *(and Lab)*|Daniel Brayton|/files/2/CHEM162Spring22.pdf@@
 
-This guy got fired because he didled with a student
+purple [This guy got fired because he had a relationship with a student](https://www.tiktok.com/@sahra.caro/video/7096555237669948715 "I hate tiktok links but this is a little funny imo") purple
 
-### JPN 102: Elementary Japanese
-<div class="text-gray-400 mb-0 mt-0 text-base">Sara King</div>
+@@JPN 102: Elementary Japanese|Sara King|/files/2/JPN102Spring22.pdf@@
 
-"Professor" was a PhD student at the time. She was very nice. I hope she is doing well.
+skyblue "Professor" was a PhD student at the time. She was very nice. I hope she is doing well. skyblue
 
-### MATH 242: Calculus 2
-<div class="text-gray-400 mb-0 mt-0 text-base">Patrick Collins</div>
+@@MATH 242: Calculus 2|Patrick Collins|/files/2/MATH242Spring22.pdf@@
 
-I hated this guy.
+skyblue I hated this guy. skyblue
 
-### PHYS 170 *(and Lab)*
-<div class="text-gray-400 mb-0 mt-0 text-base">S. Wang Yoon</div>
+@@PHYS 170 *(and Lab)*|S. Wang Yoon|/files/2/PHYS170Spring22.pdf@@
 
 ---
 
 <embed src="/files/uh_unofficial.pdf" type="application/pdf" width="100%" height="600px" />
 
-[[Transcript]]
+[[University Coursework]]
 
+[[BU Courses]]

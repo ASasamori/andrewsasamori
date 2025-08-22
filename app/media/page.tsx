@@ -21,7 +21,7 @@ export default function Page() {
                     Follow me!
                 </a>
             </div>
-            <div className="mb-6">
+            <div className="mb-3">
                 <iframe 
                     data-testid="embed-iframe" 
                     style={{ borderRadius: '12px' }}
@@ -33,6 +33,17 @@ export default function Page() {
                     loading="lazy">
                 </iframe>
             </div>
+            <p className="text-purple-700 dark:text-purple-300 space-y-10 leading-relaxed mb-3">
+                Here are my fun accounts you can view:{' '}
+                <br></br>
+                <a href="https://open.spotify.com/user/carddealer3000?si=bc6aecc596604a85" target="_blank" rel="noopener noreferrer" className="underline text-sky-500">Spotify</a>
+                ,{' '}
+                <a href="https://letterboxd.com/sasamor1/" target="_blank" rel="noopener noreferrer" className="underline text-sky-500">Letterboxd</a>
+                ,{' '}
+                <a href="https://www.goodreads.com/user/show/141124879-andrew" target="_blank" rel="noopener noreferrer" className="underline text-sky-500">Goodreads</a>
+                ,{' '}
+                <a href="https://www.strava.com/athletes/102980625" target="_blank" rel="noopener noreferrer" className="underline text-sky-500">Strava</a>!
+            </p>
 
                 {/* Future sections can go here */}
                 <div className="bg-white dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
