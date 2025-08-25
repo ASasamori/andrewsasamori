@@ -81,7 +81,7 @@ title: "Boston University Coursework"
 @@EC 504: Advanced Data Structures|David Castanon|/files/9/EC504Spr25.pdf@@
 
 
-<embed src="/files/transcript.pdf" type="application/pdf" width="100%" height="600px" />
+<embed src="/files/Transcript.pdf" type="application/pdf" width="100%" height="600px" />
 
 [[University Coursework]] 
 
