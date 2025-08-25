@@ -6,7 +6,7 @@ title: "University of Hawaii Coursework"
 
 @@BOT 107: Plants, People, and Culture|George Wong|/files/1/BOT107Fall21.pdf@@
 
-@@CHEM 161 + L: General Chemistry *(and Lab)*|Amy Fuller|/files/1/CHEM161Fall21.pdf@@
+@@CHEM 161: General Chemistry |Amy Fuller|/files/1/CHEM161Fall21.pdf@@
 
 @@COMG 251: Principles of Eff Public Speaking|Jaymian Urashima|/files/1/COMG251Fall21.pdf@@
 
@@ -20,9 +20,7 @@ skyblue In class we were tasked to present one person who we thought was a big i
 
 # Spring 2022
 
-skyblue I started to dgaf this semester skyblue
-
-@@CHEM 162 + L: General Chemistry 2 *(and Lab)*|Daniel Brayton|/files/2/CHEM162Spring22.pdf@@
+@@CHEM 162: General Chemistry 2 |Daniel Brayton|/files/2/CHEM162Spring22.pdf@@
 
 purple [This guy got fired because he had a relationship with a student](https://www.tiktok.com/@sahra.caro/video/7096555237669948715 "I hate tiktok links but this is a little funny imo") purple
 
@@ -34,7 +32,7 @@ skyblue "Professor" was a PhD student at the time. She was very nice. I hope she
 
 skyblue I hated this guy. skyblue
 
-@@PHYS 170 *(and Lab)*|S. Wang Yoon|/files/2/PHYS170Spring22.pdf@@
+@@PHYS 170 |S. Wang Yoon|/files/2/PHYS170Spring22.pdf@@
 
 ---
 

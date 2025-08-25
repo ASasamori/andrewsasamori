@@ -125,6 +125,9 @@ export async function generateMetadata({ params }: GardenPageProps) {
     return {
       title: gardenItem.title,
       description: gardenItem.description,
+      icons: {
+        icon: '/icons/vibe.png'
+      }
     }
   } catch (error) {
     return {

@@ -8,18 +8,11 @@ export default function Page() {
     const PLAYLIST_ID = '37i9dQZF1Epx62IegLxWWZ' // Your playlist ID
 
     return (
-        <section className="">
-            <div className="mb-">
-                <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
-                    Media
+        <section>
+            <div className="space-y-6 mb-6">
+                <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
+                    On-Repeat Spotify Playlist!
                 </h1>
-                <a 
-                className="text-gray-600 dark:text-gray-400 hover:text-sky-600"
-                href="https://open.spotify.com/user/carddealer3000?si=bc6aecc596604a85"
-                target="_blank" 
-                rel="noopener noreferrer">
-                    Follow me!
-                </a>
             </div>
             <div className="mb-3">
                 <iframe 
@@ -45,7 +38,7 @@ export default function Page() {
                 <a href="https://www.strava.com/athletes/102980625" target="_blank" rel="noopener noreferrer" className="underline text-sky-500">Strava</a>!
             </p>
 
-                {/* Future sections can go here */}
+                {/* Future sections can go here
                 <div className="bg-white dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
                     <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
                         Coming Soon
@@ -53,7 +46,7 @@ export default function Page() {
                     <p className="text-gray-600 dark:text-gray-400">
                         More media content will be added here...
                     </p>
-                </div>
+                </div> */}
         </section>
     )
 }

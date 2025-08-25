@@ -12,7 +12,15 @@ export default function Page() {
     <section>
       <div className="mb-6 space-y-6 text-gray-700 dark:text-gray-300 leading-relaxed">
         <p>
-          I'm passionate about sustainability in engineering and AI, healthcare systems, and electric vehicles.
+          I'm passionate about sustainability in engineering and AI, healthcare systems, electric vehicles, and
+          {' '}<a
+            href="https://startups.gallery/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-sky-500"
+          >
+           startups
+          </a>{'.'}
         </p>
 
         <p>
@@ -46,11 +54,11 @@ export default function Page() {
             href="https://maps.app.goo.gl/m89L6P5mhwPuFgio8"
             target="_blank"
             rel="noopener noreferrer"
-            className="underline text-sky-500"
+            className="hover:text-sky-500"
           >
             San Francisco
           </a>{', '}
-          and would love the chance to grab a coffee, play Ultimate frisbee together, or just chat!
+          and would love the chance to grab a coffee/chat together!
         </p>
       </div>
 

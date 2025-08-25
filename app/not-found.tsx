@@ -2,7 +2,7 @@ export default function NotFound() {
   return (
     <section>
       <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
-        404 - I'm still building this relax
+        404 - I'm still building this relax or I messed up
       </h1>
       <p className="mb-4">Just wait</p>
     </section>

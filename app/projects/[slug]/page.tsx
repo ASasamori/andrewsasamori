@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation'
 import { getProjectBySlug, getProjectSlugs } from '../../lib/api'
 import { remark } from 'remark'
 import html from 'remark-html'
+import { isConciseBody } from 'typescript'
 
 interface ProjectPageProps {
   params: Promise<{
@@ -140,6 +141,9 @@ export async function generateMetadata({ params }: ProjectPageProps) {
     return {
       title: project.title,
       description: project.description,
+      icons: {
+        icon: '/icons/vibe.png'
+      }
     }
   } catch (error) {
     return {
