@@ -28,8 +28,6 @@ skyblue "Professor" was a PhD student at the time. She was very nice. I hope she
 
 @@MATH 242: Calculus 2|Patrick Collins|/files/2/MATH242Spring22.pdf@@
 
-purple  [This guy has a poor rating on RateMyProfessor](https://www.ratemyprofessors.com/professor/1750261 "Was never a fan of him") purple
-
 @@PHYS 170 |S. Wang Yoon|/files/2/PHYS170Spring22.pdf@@
 
 ---
