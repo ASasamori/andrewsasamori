@@ -26,7 +26,7 @@ export default function Page() {
                     loading="lazy">
                 </iframe>
             </div>
-            <p className="text-purple-700 dark:text-purple-300 space-y-10 leading-relaxed mb-3">
+            <p className="text-white-700 space-y-10 leading-relaxed mb-3">
                 Here are my fun accounts you can view:{' '}
                 <br></br>
                 <a href="https://open.spotify.com/user/carddealer3000?si=bc6aecc596604a85" target="_blank" rel="noopener noreferrer" className="underline text-sky-500">Spotify</a>

@@ -1,5 +1,5 @@
 ---
-title: "BUtLAR, A Voice-Powered Digital Human Assistant"
+title: "BUtLAR, Boston University LLM Auditory Responder, a voice-powered assistant"
 description: "My year long Senior Design project at BU!"
 status: "completed"
 imageUrl: "/icons/yobe.png"

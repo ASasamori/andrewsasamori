@@ -60,6 +60,23 @@ export default async function GardenPage({ params }: GardenPageProps) {
     )
 
     processedMarkdown = processedMarkdown.replace(
+      /opennewlink\s+(.+?)\s+opennewlink/g,
+      (_, content) => {
+        const parts = content.split('|').map((part: string) => part.trim())
+        
+        if (parts.length >= 2) {
+          const text = parts[0]
+          const url = parts[1]
+          const title = parts.length >= 3 ? parts[2] : ''
+          
+          return `<a href="${url}" target="_blank" rel="noopener noreferrer" class="text-white-600 hover:text-blue-800 transition-colors" ${title ? `title="${title}"` : ''}>${text}</a>`
+        } else {
+          return content
+        }
+      }
+    )
+
+    processedMarkdown = processedMarkdown.replace(
       /purple\s+(.+?)\s+purple/g,
       (_, text) => {
         return `<span class="text-purple-500">${text}</span>`

@@ -22,15 +22,13 @@ skyblue In class we were tasked to present one person who we thought was a big i
 
 @@CHEM 162: General Chemistry 2 |Daniel Brayton|/files/2/CHEM162Spring22.pdf@@
 
-purple [This guy got fired because he had a relationship with a student](https://www.tiktok.com/@sahra.caro/video/7096555237669948715 "I hate tiktok links but this is a little funny imo") purple
-
 @@JPN 102: Elementary Japanese|Sara King|/files/2/JPN102Spring22.pdf@@
 
 skyblue "Professor" was a PhD student at the time. She was very nice. I hope she is doing well. skyblue
 
 @@MATH 242: Calculus 2|Patrick Collins|/files/2/MATH242Spring22.pdf@@
 
-skyblue I hated this guy. skyblue
+purple  [This guy has a poor rating on RateMyProfessor](https://www.ratemyprofessors.com/professor/1750261 "Was never a fan of him") purple
 
 @@PHYS 170 |S. Wang Yoon|/files/2/PHYS170Spring22.pdf@@
 

@@ -20,14 +20,14 @@ const gardenSections: GardenSection[] = [
   {
     icon: "🪢",
     items: [
-      "",
+      "Essentials",
       ""
     ]
   },
   {
     icon: "📚",
     items: [
-      ""
+      "Quotes"
     ]
   }
 ]
