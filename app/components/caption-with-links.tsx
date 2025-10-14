@@ -1,23 +1,23 @@
 import React from 'react'
-import { Person } from '../lib/random-image'
+import { Link } from '../lib/random-image'
 
 interface CaptionWithLinksProps {
   caption: string
   caption2?: string
-  people?: Person[]
-  className?: string
+  captionLink?: Link[]
+  className?: string  
 }
 
-export function CaptionWithLinks({ caption, caption2, people, className = "" }: CaptionWithLinksProps) {
+export function CaptionWithLinks({ caption, caption2, captionLink, className = "" }: CaptionWithLinksProps) {
   const processCaption = (text: string) => {
-    if (!people || people.length === 0) {
+    if (!captionLink || captionLink.length === 0) {
       return text
     }
 
     // Split caption into parts and replace names with links
     let parts: React.ReactNode[] = [text]
     
-    people.forEach((person, index) => {
+    captionLink.forEach((person, index) => {
       parts = parts.flatMap(part => {
         if (typeof part !== 'string') return part
         
