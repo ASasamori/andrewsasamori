@@ -39,7 +39,7 @@ export function RandomImageClient() {
           <CaptionWithLinks 
             caption={imageData.caption}
             caption2={imageData.caption2}
-            people={imageData.captionLink}
+            captionLink={imageData.captionLink}
           /> 
         </p>
       )}
