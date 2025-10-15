@@ -58,11 +58,11 @@ export function getRandomImage(): ImageData {
     {
       src: '/images/ts5.JPG',
       caption: '📷 by Mone',
-      caption2: '📍 North Dome, Yosemite',
+      caption2: '📍 North Dome, Yosemite, CA',
       captionLink:
         [
           { name: "Mone", url: 'https://www.linkedin.com/in/mone-sekiguchi/' },
-          { name: "Tanah Lot, ID", url: 'https://maps.app.goo.gl/2dh6xkvCacoqfcEE9' }
+          { name: "North Dome, Yosemite, CA", url: 'https://maps.app.goo.gl/2dh6xkvCacoqfcEE9' }
         ]
     }
   ]

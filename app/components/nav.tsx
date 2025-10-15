@@ -1,22 +1,29 @@
+'use client'
+
 import Link from 'next/link'
+import { useLanguage } from '../contexts/language-context'
+import { translations } from '../lib/translations'
+import { ToggleControls } from './toggle-controls'
 
 const navItems = {
   '/': {
-    name: 'Andrew Sasamori',
+    nameKey: 'home' as const,
   },
   '/digital_garden': {
-    name: 'Digital Garden',
+    nameKey: 'digitalGarden' as const,
   },
    '/projects': {
-    name: 'Projects',
+    nameKey: 'projects' as const,
   },
   '/media': {
-    name: 'Media',
+    nameKey: 'media' as const,
   },  
   
 }
 
 export function Navbar() {
+  const { isJapanese } = useLanguage()
+  
   return (
     <aside className="-ml-[8px] mb-6 tracking-tight">
       <div className="lg:sticky lg:top-20">
@@ -25,7 +32,8 @@ export function Navbar() {
           id="nav"
         >
           <div className="flex flex-row space-x-0 pr-10">
-            {Object.entries(navItems).map(([path, { name }]) => {
+            {Object.entries(navItems).map(([path, { nameKey }]) => {
+              const name = isJapanese ? translations.navigation[nameKey].ja : translations.navigation[nameKey].en
               return (
                 <Link
                   key={path}
@@ -38,6 +46,7 @@ export function Navbar() {
             })}
           </div>
         </nav>
+        <ToggleControls />
       </div>
     </aside>
   )

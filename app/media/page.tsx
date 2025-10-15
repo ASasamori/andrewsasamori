@@ -1,17 +1,22 @@
-export const metadata = {
-    icons: {
-        icon: '/icons/lofi.jpg'
-    }
-}
+'use client'
+import { useLanguage } from '../contexts/language-context'
+import { translations } from '../lib/translations'
+
+// export const metadata = {
+//     icons: {
+//         icon: '/icons/lofi.jpg'
+//     }
+// }
 
 export default function Page() {
+    const { isJapanese } = useLanguage()
     const PLAYLIST_ID = '37i9dQZF1Epx62IegLxWWZ' // Your playlist ID
 
     return (
         <section>
             <div className="space-y-6 mb-6">
                 <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
-                    On-Repeat Spotify Playlist!
+                    {isJapanese ? translations.Media.title.ja : translations.Media.title.en}
                 </h1>
             </div>
             <div className="mb-3">
@@ -27,7 +32,7 @@ export default function Page() {
                 </iframe>
             </div>
             <p className="text-white-700 space-y-10 leading-relaxed mb-3">
-                Here are my fun accounts you can view:{' '}
+                {isJapanese ? translations.Media.funAccounts.ja : translations.Media.funAccounts.en}{' '}
                 <br></br>
                 <a href="https://open.spotify.com/user/carddealer3000?si=bc6aecc596604a85" target="_blank" rel="noopener noreferrer" className="underline text-sky-500">Spotify</a>
                 ,{' '}

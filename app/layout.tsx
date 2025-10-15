@@ -7,6 +7,7 @@ import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import Footer from './components/footer'
 import { baseUrl } from './sitemap'
+import { ClientProviders } from './components/client-providers'
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
     type: 'website',
   },
   icons: {
-
+    icon: '/icons/vibe.png'
   },
   robots: {
     index: true,
@@ -56,13 +57,15 @@ export default function RootLayout({
       )}
     >
       <body className="antialiased max-w-xl mx-4 mt-4 lg:mx-auto" suppressHydrationWarning={true}>
-        <main className="flex-auto min-w-0 mt-2 flex flex-col px-2 md:px-0">
-          <Navbar />
-          {children}
-          {/* <Footer /> */}
-          <Analytics />
-          <SpeedInsights />
-        </main>
+        <ClientProviders>
+          <main className="flex-auto min-w-0 mt-2 flex flex-col px-2 md:px-0">
+            <Navbar />
+            {children}
+            {/* <Footer /> */}
+            <Analytics />
+            <SpeedInsights />
+          </main>
+        </ClientProviders>
       </body>
     </html>
   )
