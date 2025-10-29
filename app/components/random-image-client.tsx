@@ -4,16 +4,17 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { getRandomImage } from '../lib/random-image'
 import { CaptionWithLinks } from './caption-with-links'
+import { Language } from '../lib/i18n'
 
-export function RandomImageClient() {
-  const [imageData, setImageData] = useState(getRandomImage())
+export function RandomImageClient({ lang }: { lang: Language }) {
+  const [imageData, setImageData] = useState(getRandomImage(lang))
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     // Generate new random image on client side
-    setImageData(getRandomImage())
+    setImageData(getRandomImage(lang))
     setIsLoading(false)
-  }, [])
+  }, [lang])
 
   if (isLoading) {
     // Show a placeholder or the server-side image while loading
@@ -35,7 +36,7 @@ export function RandomImageClient() {
         priority
       />
       {imageData.caption && (
-        <p className="mt-3 text-sm text-gray-600 dark:text-gray-400 text-center">
+        <p className="mt-3 text-sm text-black-600 dark:text-black-400 text-center">
           <CaptionWithLinks 
             caption={imageData.caption}
             caption2={imageData.caption2}

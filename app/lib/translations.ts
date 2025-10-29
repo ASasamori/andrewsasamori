@@ -36,19 +36,19 @@ export const translations = {
     },
     bio3Start: {
       en: 'Connect with me on',
-      ja: ''
+      ja: 'リンクトインで連絡してください'
     },
     bio3LinkedIn: {
       en: 'LinkedIn',
-      ja: 'LinkedIn'
+      ja: 'リンクトイン'
     },
     bio3Middle: {
       en: 'or check out my',
-      ja: ''
+      ja: 'または私の'
     },
     bio3GitHub: {
       en: 'GitHub',
-      ja: 'GitHub'
+      ja: 'ギットハブ'
     },
     bio3End: {
       en: '!',

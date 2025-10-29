@@ -33,7 +33,7 @@ export function CaptionWithLinks({ caption, caption2, captionLink, className = "
                 href={person.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm text-gray-600 dark:text-gray-400 hover:text-sky-600"
+                className="text-sm text-gray-600 dark:text-black-400 hover:text-sky-600"
               >
                 {person.name}
               </a>

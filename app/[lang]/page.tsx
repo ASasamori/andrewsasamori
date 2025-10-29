@@ -1,15 +1,19 @@
-'use client'
+import { RandomImageClient } from '../components/random-image-client'
+import { translations } from '../lib/translations'
+import { Language, getLanguage } from '../lib/i18n'
 
-import { RandomImageClient } from './components/random-image-client'
-import { useLanguage } from './contexts/language-context'
-import { translations } from './lib/translations'
-
-export default function Page() {
-  const { isJapanese } = useLanguage()
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ lang: string }>
+}) {
+  const { lang } = await params
+  const language = getLanguage(lang)
+  const isJapanese = language === 'ja'
 
   return (
     <section>
-      <div className="mb-6 space-y-6 text-gray-700 dark:text-gray-300 leading-relaxed">
+      <div className="mb-6 space-y-6 text-black-700 dark:text-black-300 leading-relaxed">
         <p>
           {isJapanese ? translations.home.bio1.ja : translations.home.bio1.en}
           {' '}<a
@@ -60,7 +64,7 @@ export default function Page() {
         </p>
       </div>
 
-      <RandomImageClient />
+      <RandomImageClient lang={language} />
     </section>
   )
 }
