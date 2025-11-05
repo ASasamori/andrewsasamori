@@ -36,7 +36,7 @@ export function RandomImageClient({ lang }: { lang: Language }) {
         priority
       />
       {imageData.caption && (
-        <p className="mt-3 text-sm text-black-600 dark:text-black-400 text-center">
+        <p className="mt-3 text-sm text-white-600 dark:text-white-300 text-center">
           <CaptionWithLinks 
             caption={imageData.caption}
             caption2={imageData.caption2}

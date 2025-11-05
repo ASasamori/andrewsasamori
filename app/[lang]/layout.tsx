@@ -52,7 +52,7 @@ export async function generateMetadata({
     alternates: {
       languages: {
         'en-US': `${baseUrl}/en`,
-        'ja-JP': `${baseUrl}/ja`,
+        'ja-JP': `${baseUrl}/jp`,
       },
     },
   }
@@ -74,7 +74,7 @@ export default async function LangLayout({
     <html
       lang={language}
       className={cx(
-        'text-black bg-white dark:text-black dark:bg-white',
+        'text-black bg-dark-bg dark:text-white dark:bg-gray-900',
         GeistSans.variable,
         GeistMono.variable
       )}
