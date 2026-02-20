@@ -6,7 +6,7 @@ import { Navbar } from '../components/nav'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { baseUrl } from '../sitemap'
-import { Language, languages, getLanguage } from '../lib/i18n'
+import { languages, getLanguage } from '../lib/i18n'
 
 export async function generateStaticParams() {
   return languages.map((lang) => ({ lang }))
@@ -30,9 +30,9 @@ export async function generateMetadata({
     openGraph: {
       title: 'My Portfolio',
       description: 'This is my portfolio.',
-      url: `${baseUrl}/${language}`,
+      url: baseUrl,
       siteName: 'My Portfolio',
-      locale: language === 'ja' ? 'ja_JP' : 'en_US',
+      locale: 'en_US',
       type: 'website',
     },
     icons: {
@@ -51,8 +51,7 @@ export async function generateMetadata({
     },
     alternates: {
       languages: {
-        'en-US': `${baseUrl}/en`,
-        'ja-JP': `${baseUrl}/jp`,
+        'en-US': baseUrl,
       },
     },
   }

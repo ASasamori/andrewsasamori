@@ -11,16 +11,16 @@ interface ImageData {
   captionLink?: Link[]
 }
 
-export function getRandomImage(language?: 'en' | 'ja'): ImageData {
+export function getRandomImage(): ImageData {
   const images: ImageData[] = [
     { 
       src: '/images/ts.jpeg',
-      caption: language === 'ja' ? '📷 アルベルトによる' : '📷 by Albert',
-      caption2: language === 'ja' ? '📍 タナホルト, ID' : '📍 Tanah Lot, ID',
+      caption: '📷 by Albert',
+      caption2: '📍 Tanah Lot, ID',
       captionLink:
       [
         {name: "Albert", url: 'https://www.linkedin.com/in/albertzhaoo/'},
-        {name: language === 'ja' ? "タナホルト, ID" : "Tanah Lot, ID", url: 'https://maps.app.goo.gl/ySXcdh8WvFkjpamq5'}
+        {name: "Tanah Lot, ID", url: 'https://maps.app.goo.gl/ySXcdh8WvFkjpamq5'}
       ]
     },
     { 

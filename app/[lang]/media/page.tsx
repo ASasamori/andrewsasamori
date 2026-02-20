@@ -1,20 +1,17 @@
 import { translations } from '../../lib/translations'
-import { getLanguage } from '../../lib/i18n'
 
 export default async function Page({
   params,
 }: {
   params: Promise<{ lang: string }>
 }) {
-  const { lang } = await params
-  const language = getLanguage(lang)
-  const isJapanese = language === 'ja'
+  await params
 
   return (
     <section>
       <div className="space-y-6 mb-6">
         <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
-          {isJapanese ? translations.Media.title.ja : translations.Media.title.en}
+          {translations.Media.title.en}
         </h1>
       </div>
       <div className="mb-3">
@@ -30,7 +27,7 @@ export default async function Page({
         </iframe>
       </div>
       <p className="text-white-700 space-y-10 leading-relaxed mb-3">
-        {isJapanese ? translations.Media.funAccounts.ja : translations.Media.funAccounts.en}{' '}
+        {translations.Media.funAccounts.en}{' '}
         <br></br>
         <a href="https://open.spotify.com/user/carddealer3000?si=bc6aecc596604a85" target="_blank" rel="noopener noreferrer" className="underline text-sky-500">Spotify</a>
         ,{' '}

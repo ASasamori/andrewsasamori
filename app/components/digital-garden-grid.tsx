@@ -1,5 +1,7 @@
 'use client'
 
+import Image from 'next/image'
+
 export interface GardenSection {
   icon: string
   items: string[]
@@ -37,9 +39,16 @@ export default function DigitalGardenGrid() {
   return (
     <div className="max-w-4xl mx-auto">
       <div className="flex justify-center mb-6">
-        <img 
-        src="/images/garden.png"
-        className="w-64 aspect-square object-cover rounded-md"/>
+        <Image
+          src="/images/garden.webp"
+          alt="Garden"
+          width={256}
+          height={256}
+          className="w-64 aspect-square object-cover rounded-md"
+          priority
+          loading="eager"
+          fetchPriority="high"
+        />
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

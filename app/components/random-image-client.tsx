@@ -4,17 +4,16 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { getRandomImage } from '../lib/random-image'
 import { CaptionWithLinks } from './caption-with-links'
-import { Language } from '../lib/i18n'
 
-export function RandomImageClient({ lang }: { lang: Language }) {
-  const [imageData, setImageData] = useState(getRandomImage(lang))
+export function RandomImageClient() {
+  const [imageData, setImageData] = useState(getRandomImage())
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     // Generate new random image on client side
-    setImageData(getRandomImage(lang))
+    setImageData(getRandomImage())
     setIsLoading(false)
-  }, [lang])
+  }, [])
 
   if (isLoading) {
     // Show a placeholder or the server-side image while loading

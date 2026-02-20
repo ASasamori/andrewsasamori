@@ -4,7 +4,6 @@ import { remark } from 'remark'
 import remarkRehype from 'remark-rehype'
 import rehypeRaw from 'rehype-raw'
 import rehypeStringify from 'rehype-stringify'
-import { getLanguage } from '../../../lib/i18n'
 
 interface GardenPageProps {
   params: Promise<{
@@ -15,7 +14,7 @@ interface GardenPageProps {
 
 export async function generateStaticParams() {
   const slugs = getGardenSlugs()
-  const languages = ['en', 'ja']
+  const languages = ['en']
 
   return languages.flatMap((lang) =>
     slugs.map((slug) => ({
@@ -26,8 +25,7 @@ export async function generateStaticParams() {
 }
 
 export default async function GardenPage({ params }: GardenPageProps) {
-  const { slug, lang } = await params
-  const language = getLanguage(lang)
+  const { slug } = await params
 
   try {
     const gardenItem = getGardenBySlug(slug)
@@ -37,7 +35,7 @@ export default async function GardenPage({ params }: GardenPageProps) {
       /\[\[([^\]]+)\]\]/g,
       (_, linkText) => {
         const slug = linkText.toLowerCase().replace(/[^a-z0-9]/g, '_').replace(/_+/g, '_').replace(/^_|_$/g, '')
-        return `<a href="/${language}/digital_garden/${slug}" class="wiki-link">${linkText}</a>`
+        return `<a href="/digital_garden/${slug}" class="wiki-link">${linkText}</a>`
       }
     )
 

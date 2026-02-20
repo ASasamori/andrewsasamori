@@ -12,7 +12,7 @@ interface ProjectPageProps {
 
 export async function generateStaticParams() {
   const slugs = getProjectSlugs()
-  const languages = ['en', 'ja']
+  const languages = ['en']
 
   return languages.flatMap((lang) =>
     slugs.map((slug) => ({
