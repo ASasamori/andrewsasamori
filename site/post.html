@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{DESCRIPTION}}">
+    <title>{{TITLE}} — Andrew Sasamori</title>
+    <link rel="icon" href="/icons/vibe.png">
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <div class="page">
+      <header class="site-header">
+        <p class="site-title"><a href="/">Andrew Sasamori</a></p>
+        <nav class="site-nav" aria-label="Primary navigation">
+          <a href="/blogs/">blogs</a>
+        </nav>
+      </header>
+
+      <main>
+        <article class="post">
+          <header class="post-header">
+            <h1>{{TITLE}}</h1>
+            <time class="post-date" datetime="{{ISO_DATE}}">{{DISPLAY_DATE}}</time>
+          </header>
+          <div class="post-content">
+            {{CONTENT}}
+          </div>
+        </article>
+      </main>
+
+      <footer class="site-footer">Andrew Sasamori</footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+---
+layout: default
+title: blogs
+description: Writing by Andrew Sasamori.
+permalink: /blogs/
+---
+<main class="section">
+  <header class="section-header"><h1>blogs</h1></header>
+
+  {% if site.posts.size > 0 %}
+    <ol class="post-list">
+      {% for post in site.posts %}
+        <li>
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time>
+        </li>
+      {% endfor %}
+    </ol>
+  {% else %}
+    <p>No posts yet.</p>
+  {% endif %}
+</main>

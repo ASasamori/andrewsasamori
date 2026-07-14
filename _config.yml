@@ -1,0 +1,27 @@
+title: Andrew Sasamori
+description: Andrew Sasamori's portfolio and blog.
+url: ""
+baseurl: ""
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+permalink: /blogs/:title/
+
+exclude:
+  - app
+  - content
+  - data
+  - dist
+  - middleware.ts
+  - next-env.d.ts
+  - node_modules
+  - package.json
+  - pnpm-lock.yaml
+  - postcss.config.js
+  - scripts
+  - site
+  - tools
+  - tsconfig.json
+  - tsconfig.tsbuildinfo
+  - vercel.json
