@@ -45,7 +45,7 @@
 
       function render() {
         const position = positions[select.value]
-        preview.src = `/public/images/${select.value}`
+        preview.src = `/assets/images/${select.value}`
         preview.style.objectPosition = `${position.x}% ${position.y}%`
         value.textContent = `${position.x}% ${position.y}%`
       }

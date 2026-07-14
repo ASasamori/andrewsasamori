@@ -16,7 +16,7 @@ Recently I have been splitting free time between reading, learning guitar, and s
 
 One useful habit has been keeping unfinished ideas in plain text. A note does not need to become an essay immediately; it only needs enough context to make sense when I return to it.
 
-![Digital garden artwork]({{ '/public/images/garden.webp' | relative_url }})
+![Digital garden artwork]({{ '/assets/images/garden.webp' | relative_url }})
 
 Image and GIF syntax are identical in Markdown:
 

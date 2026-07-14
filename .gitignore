@@ -16,6 +16,11 @@
 /build
 /_site
 /.jekyll-cache
+/.archive/.next
+/.archive/.pnpm-store
+/.archive/node_modules
+/.archive/next-env.d.ts
+/.archive/*.tsbuildinfo
 
 # misc
 .DS_Store

@@ -24,7 +24,7 @@ def evaluate(model, examples):
     return sum(model(x) == y for x, y in examples) / len(examples)
 ```
 
-![A digital garden illustration]({{ '/public/images/garden.webp' | relative_url }})
+![A digital garden illustration]({{ '/assets/images/garden.webp' | relative_url }})
 
 > The goal is not to remove personality. It is to make the writing and work easier to find.
 

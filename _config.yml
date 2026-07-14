@@ -1,6 +1,6 @@
 title: Andrew Sasamori
 description: Andrew Sasamori's portfolio and blog.
-url: ""
+url: "https://andrewsasamori.org"
 baseurl: ""
 markdown: kramdown
 kramdown:
@@ -9,6 +9,7 @@ kramdown:
 permalink: /blogs/:title/
 
 exclude:
+  - .archive
   - app
   - content
   - data
