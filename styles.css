@@ -63,6 +63,16 @@ a:focus-visible { outline: 2px solid var(--link-hover); outline-offset: 3px; }
 .bio p { margin: 0 0 1.35rem; }
 .bio p:last-child { margin-bottom: 0; }
 
+.bio a { color: var(--link-hover); }
+
+.bio a:hover,
+.bio a:focus-visible {
+  color: var(--link-hover);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.16em;
+}
+
 .gallery-figure {
   float: right;
   width: 280px;
