@@ -58,8 +58,9 @@ python3 -m http.server 8000
 ```
 
 Open <http://localhost:8000/tools/image-focus.html>, choose a photo, and drag it inside
-the circular preview. Copy the resulting `focus` value into the matching `gallery.js`
-entry. The `tools/` directory is excluded from the deployed site.
+the circular preview. Use the sliders for precise horizontal/vertical movement and zoom,
+or use the mouse wheel to zoom. Copy the resulting `focus` and `zoom` settings into the
+matching `gallery.js` entry. The `tools/` directory is excluded from the deployed site.
 
 ## Deploy or redo the cutover
 

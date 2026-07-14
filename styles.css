@@ -79,13 +79,21 @@ a:focus-visible { outline: 2px solid var(--link-hover); outline-offset: 3px; }
   margin: 0 0 22px 36px;
 }
 
-.gallery-figure img {
+.gallery-image-frame {
   display: block;
   width: 280px;
   height: 280px;
+  overflow: hidden;
   background: #f2f2f2;
   border-radius: 50%;
+}
+
+.gallery-figure img {
+  display: block;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  transition: transform 160ms ease;
 }
 
 .gallery-caption {
@@ -173,7 +181,7 @@ a:focus-visible { outline: 2px solid var(--link-hover); outline-offset: 3px; }
   .site-header { padding-top: 25px; }
   .intro { padding-top: 38px; }
   .gallery-figure { float: none; width: min(280px, 78vw); margin: 0 auto 34px; }
-  .gallery-figure img { width: min(280px, 78vw); height: min(280px, 78vw); }
+  .gallery-image-frame { width: min(280px, 78vw); height: min(280px, 78vw); }
 }
 
 @media (max-width: 440px) {
