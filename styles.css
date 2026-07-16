@@ -110,9 +110,9 @@ a:focus-visible { outline: 2px solid var(--link-hover); outline-offset: 3px; }
 .gallery-caption a { color: inherit; }
 .gallery-caption a:hover, .gallery-caption a:focus-visible { color: var(--link-hover); }
 
-.section, .post { max-width: 720px; padding: 50px 0 80px; }
+.section, .note { max-width: 720px; padding: 50px 0 80px; }
 .section-header { margin-bottom: 36px; }
-.section h1, .post h1 {
+.section h1, .note h1 {
   margin: 0;
   font-size: 1.6rem;
   font-weight: 500;
@@ -120,34 +120,51 @@ a:focus-visible { outline: 2px solid var(--link-hover); outline-offset: 3px; }
   letter-spacing: -0.02em;
 }
 
-.post-list { margin: 0; padding: 0; list-style: none; }
-.post-list li {
+.note-list { margin: 0; padding: 0; list-style: none; }
+.note-list li {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   gap: 24px;
   padding: 7px 0;
 }
 
-.post-list time, .post-date {
+.note-meta {
+  display: inline-flex;
+  align-items: baseline;
+  justify-content: flex-end;
+  gap: 10px;
+  min-width: 1ch;
+  white-space: nowrap;
+}
+
+.note-list time, .note-date {
   color: var(--muted);
   font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 0.78rem;
   white-space: nowrap;
 }
 
-.post-header { margin-bottom: 42px; }
-.post-date { display: block; margin-top: 9px; }
-.post-content h2, .post-content h3, .post-content h4 {
+.note-pin {
+  color: var(--text);
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.note-header { margin-bottom: 42px; }
+.note-date { display: block; margin-top: 9px; }
+.note-content h2, .note-content h3, .note-content h4 {
   margin: 2.2rem 0 0.7rem;
   font-weight: 500;
   line-height: 1.35;
 }
-.post-content h2 { font-size: 1.3rem; }
-.post-content h3 { font-size: 1.1rem; }
-.post-content p, .post-content ul, .post-content ol, .post-content blockquote { margin: 0 0 1.25rem; }
-.post-content img, .post-content video { display: block; max-width: 100%; height: auto; margin: 1.8rem 0; }
-.post-content blockquote { padding-left: 1rem; border-left: 2px solid var(--text); color: var(--muted); }
-.post-content pre {
+.note-content h2 { font-size: 1.3rem; }
+.note-content h3 { font-size: 1.1rem; }
+.note-content p, .note-content ul, .note-content ol, .note-content blockquote { margin: 0 0 1.25rem; }
+.note-content img, .note-content video { display: block; max-width: 100%; height: auto; margin: 1.8rem 0; }
+.note-content blockquote { padding-left: 1rem; border-left: 2px solid var(--text); color: var(--muted); }
+.note-content pre {
   max-width: 100%;
   margin: 1.6rem 0;
   padding: 16px 18px;
@@ -157,16 +174,16 @@ a:focus-visible { outline: 2px solid var(--link-hover); outline-offset: 3px; }
   font-size: 0.86rem;
   line-height: 1.55;
 }
-.post-content code {
+.note-content code {
   padding: 0.12em 0.3em;
   background: var(--code-background);
   font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 0.88em;
 }
-.post-content pre code { padding: 0; background: transparent; }
-.post-content table { display: block; width: max-content; max-width: 100%; margin: 1.6rem 0; overflow-x: auto; border-collapse: collapse; font-size: 0.92rem; }
-.post-content th, .post-content td { padding: 8px 10px; border: 1px solid var(--rule); text-align: left; }
-.post-content hr { margin: 2.5rem 0; border: 0; border-top: 1px solid var(--rule); }
+.note-content pre code { padding: 0; background: transparent; }
+.note-content table { display: block; width: max-content; max-width: 100%; margin: 1.6rem 0; overflow-x: auto; border-collapse: collapse; font-size: 0.92rem; }
+.note-content th, .note-content td { padding: 8px 10px; border: 1px solid var(--rule); text-align: left; }
+.note-content hr { margin: 2.5rem 0; border: 0; border-top: 1px solid var(--rule); }
 
 .site-footer {
   padding: 22px 0 36px;
@@ -186,7 +203,7 @@ a:focus-visible { outline: 2px solid var(--link-hover); outline-offset: 3px; }
 
 @media (max-width: 440px) {
   .site-header { gap: 18px; }
-  .post-list li { grid-template-columns: 1fr; gap: 2px; }
+  .note-list li { grid-template-columns: 1fr auto; gap: 12px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

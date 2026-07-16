@@ -1,0 +1,30 @@
+---
+layout: default
+title: notes
+description: Writing by Andrew Sasamori.
+permalink: /notes/
+---
+<main class="section">
+  <header class="section-header"><h1>notes</h1></header>
+
+  {% assign ordered_notes = site.notes | sort: "order" %}
+  {% if ordered_notes.size > 0 %}
+    <ol class="note-list">
+      {% for note in ordered_notes %}
+        <li>
+          <a href="{{ note.url | relative_url }}">{{ note.title }}</a>
+          <span class="note-meta">
+            {% if note.display_date %}
+              <time datetime="{{ note.display_date | date_to_xmlschema }}">{{ note.display_date | date: "%B %-d, %Y" }}</time>
+            {% endif %}
+            {% if note.pinned %}
+              <span class="note-pin" aria-label="Pinned" title="Pinned">^</span>
+            {% endif %}
+          </span>
+        </li>
+      {% endfor %}
+    </ol>
+  {% else %}
+    <p>No notes yet.</p>
+  {% endif %}
+</main>

@@ -9,14 +9,14 @@ Markdown. Vercel builds it into static HTML and serves it at
 - `index.html`: homepage copy and its markup
 - `_layouts/default.html`: shared header and outer page structure
 - `styles.css`: all visual styling
-- `_posts/`: blog posts named `YYYY-MM-DD-post-title.md`
+- `_notes/`: Markdown notes with clean filenames and explicit ordering
 
 Less frequent changes:
 
 - `gallery.js`: gallery images, captions, and focal points
 - `_config.yml`: site title, domain, Markdown, permalink, and build settings
-- `_layouts/post.html`: shared blog article structure
-- `blogs.html`: blog index structure
+- `_layouts/note.html`: shared note structure
+- `notes.html`: notes index structure
 - `assets/`: gallery and post media
 
 Do not edit `_site/`; Jekyll regenerates it.
@@ -31,20 +31,25 @@ bundle exec jekyll serve
 Open <http://127.0.0.1:4000>. Changes to normal pages, layouts, CSS, and posts are watched
 automatically. Restart the command after changing `_config.yml`.
 
-## Add a blog post
+## Add a note
 
-Create `_posts/YYYY-MM-DD-post-title.md`:
+Create `_notes/note-title.md`:
 
 ```md
 ---
-layout: post
-title: Post title
-date: 2026-07-13
+title: Note title
+order: 10
+pinned: false
 description: A short description for search engines.
 ---
 
-Post content goes here.
+Note content goes here.
 ```
+
+`order` controls the list directly: lower numbers appear first, regardless of date. Using
+10, 20, 30 leaves room to insert notes later. Set `pinned: true` to show the small pin
+marker. `display_date` is optional; add a line such as `display_date: 2026-07-15` only when
+you want a date to appear on the notes index and note page.
 
 Jekyll's GitHub-flavored Markdown supports headings, tables, fenced code blocks, links,
 images, GIFs, lists, blockquotes, and inline HTML. Put local media in `assets/`.
@@ -71,7 +76,7 @@ and keeps the already-attached domain. No DNS change is required for this in-pla
 For a future deployment:
 
 1. Run `bundle exec jekyll build` and inspect `_site/` locally.
-2. Run `bundle exec jekyll serve` and check the homepage, `/blogs/`, and a post.
+2. Run `bundle exec jekyll serve` and check the homepage, `/notes/`, and a note.
 3. Commit the source files; `_site/` remains ignored.
 4. Push `main` to GitHub.
 5. In Vercel, open the project and confirm the newest production deployment succeeds.

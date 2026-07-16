@@ -1,12 +1,22 @@
 title: Andrew Sasamori
-description: Andrew Sasamori's portfolio and blog.
+description: Andrew Sasamori's portfolio and notes.
 url: "https://andrewsasamori.org"
 baseurl: ""
 markdown: kramdown
 kramdown:
   input: GFM
   syntax_highlighter: rouge
-permalink: /blogs/:title/
+collections:
+  notes:
+    output: true
+    permalink: /notes/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: notes
+    values:
+      layout: note
 
 exclude:
   - .archive

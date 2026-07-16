@@ -30,15 +30,15 @@ const images = [
   {
     src: '/assets/images/ts5.JPG',
     alt: 'North Dome in Yosemite, California',
-    focus: '50% 66%',
-    zoom: 1,
+    focus: '62% 68%',
+    zoom: 1.05,
     caption: '📷 by <a href="https://www.linkedin.com/in/mone-sekiguchi/">Mone</a><br>📍 <a href="https://maps.app.goo.gl/2dh6xkvCacoqfcEE9">North Dome, Yosemite, CA</a>'
   },
   {
     src: '/assets/images/ts6.JPG',
     alt: 'Friends',
-    focus: '56% 41%',
-    zoom: 1,
+    focus: '76% 61%',
+    zoom: 1.53,
     caption: 'With Asaf, <a href="https://www.linkedin.com/in/ajeet-chohan-6715591b5/">Ajeet</a>, <a href="https://www.linkedin.com/in/karstonrunge/">Karston</a>, and Remy<br>📍 <a href="https://maps.app.goo.gl/b5y1FTfYv8vTdrdj6">General Grant Tree (Sequoia National Park), CA</a>'
   }
 ]
