@@ -1,63 +1,102 @@
 const images = [
   {
-    src: '/assets/images/ts.jpeg',
-    alt: 'Tanah Lot in Indonesia',
-    focus: '50% 50%',
+    src: "/assets/images/ts.jpeg",
+    alt: "Tanah Lot in Indonesia",
+    focus: "50% 50%",
     zoom: 1,
-    caption: '📷 by <a href="https://www.linkedin.com/in/albertzhaoo/">Albert</a><br>📍 <a href="https://maps.app.goo.gl/ySXcdh8WvFkjpamq5">Tanah Lot, ID</a>'
+    caption:
+      '📷 by <a href="https://www.linkedin.com/in/albertzhaoo/">Albert</a><br>📍 <a href="https://maps.app.goo.gl/ySXcdh8WvFkjpamq5">Tanah Lot, ID</a>',
   },
   {
-    src: '/assets/images/ts2.jpeg',
-    alt: 'Sete Cidades in Portugal',
-    focus: '100% 51%',
+    src: "/assets/images/ts2.jpeg",
+    alt: "Sete Cidades in Portugal",
+    focus: "100% 51%",
     zoom: 1,
-    caption: '📷 by <a href="https://www.linkedin.com/in/bennettetaylor/">Ben</a><br>📍 <a href="https://maps.app.goo.gl/BLqx8jmeH5dRA5mEA">Sete Cidades, Portugal</a>'
+    caption:
+      '📷 by <a href="https://www.linkedin.com/in/bennettetaylor/">Ben</a><br>📍 <a href="https://maps.app.goo.gl/BLqx8jmeH5dRA5mEA">Sete Cidades, Portugal</a>',
   },
   {
-    src: '/assets/images/ts3.jpeg',
-    alt: 'Friends at Mount Tamalpais in California',
-    focus: '65% 49%',
+    src: "/assets/images/ts3.jpeg",
+    alt: "Friends at Mount Tamalpais in California",
+    focus: "65% 49%",
     zoom: 1,
-    caption: 'With <a href="https://www.linkedin.com/in/michaelg-fong/">Michael</a>, Ava, and <a href="https://www.linkedin.com/in/karstonrunge/">Karston</a><br>📍 <a href="https://maps.app.goo.gl/HpsYjhVv43y7TS2J7">Mt Tamalpais, CA</a>'
+    caption:
+      'With <a href="https://www.linkedin.com/in/michaelg-fong/">Michael</a>, Ava, and <a href="https://www.linkedin.com/in/karstonrunge/">Karston</a><br>📍 <a href="https://maps.app.goo.gl/HpsYjhVv43y7TS2J7">Mt Tamalpais, CA</a>',
   },
   {
-    src: '/assets/images/ts4.jpeg',
-    alt: 'Friends together in the San Francisco Bay Area',
-    focus: '56% 41%',
+    src: "/assets/images/ts4.jpeg",
+    alt: "Friends together in the San Francisco Bay Area",
+    focus: "56% 41%",
     zoom: 1,
-    caption: 'With <a href="https://www.linkedin.com/in/arjun-patrawala/">Arjun P.</a>, <a href="https://www.linkedin.com/in/gaurav-chakravarty/">Gaurav</a>, <a href="https://www.linkedin.com/in/tony-xin/">Tony</a>, <a href="https://www.linkedin.com/in/arjunsk18/">Arjun S.</a>, and <a href="https://www.linkedin.com/in/avi-gerber/">Avi</a><br>Faithful to the Bay!'
+    caption:
+      'With <a href="https://www.linkedin.com/in/arjun-patrawala/">Arjun P.</a>, <a href="https://www.linkedin.com/in/gaurav-chakravarty/">Gaurav</a>, <a href="https://www.linkedin.com/in/tony-xin/">Tony</a>, <a href="https://www.linkedin.com/in/arjunsk18/">Arjun S.</a>, and <a href="https://www.linkedin.com/in/avi-gerber/">Avi</a><br>Faithful to the Bay!',
   },
   {
-    src: '/assets/images/ts5.JPG',
-    alt: 'North Dome in Yosemite, California',
-    focus: '62% 68%',
+    src: "/assets/images/ts5.JPG",
+    alt: "North Dome in Yosemite, California",
+    focus: "62% 68%",
     zoom: 1.05,
-    caption: '📷 by <a href="https://www.linkedin.com/in/mone-sekiguchi/">Mone</a><br>📍 <a href="https://maps.app.goo.gl/2dh6xkvCacoqfcEE9">North Dome, Yosemite, CA</a>'
+    caption:
+      '📷 by <a href="https://www.linkedin.com/in/mone-sekiguchi/">Mone</a><br>📍 <a href="https://maps.app.goo.gl/2dh6xkvCacoqfcEE9">North Dome, Yosemite, CA</a>',
   },
   {
-    src: '/assets/images/ts6.JPG',
-    alt: 'Friends',
-    focus: '76% 61%',
+    src: "/assets/images/ts7.JPG",
+    alt: "Friends",
+    focus: "50% 57%",
+    zoom: 2.23,
+    caption:
+      '📷 by <a href="https://www.linkedin.com/in/arjunsk18/">Arjun</a><br>📍 <a href="https://maps.app.goo.gl/VNxJ1QbDTcrwfPJV9">Lake Como, Italy</a>',
+  },
+  {
+    src: "/assets/images/ts6.JPG",
+    alt: "Friends",
+    focus: "76% 61%",
     zoom: 1.53,
-    caption: 'With Asaf, <a href="https://www.linkedin.com/in/ajeet-chohan-6715591b5/">Ajeet</a>, <a href="https://www.linkedin.com/in/karstonrunge/">Karston</a>, and Remy<br>📍 <a href="https://maps.app.goo.gl/b5y1FTfYv8vTdrdj6">General Grant Tree (Sequoia National Park), CA</a>'
+    caption:
+      'With Asaf, <a href="https://www.linkedin.com/in/ajeet-chohan-6715591b5/">Ajeet</a>, <a href="https://www.linkedin.com/in/karstonrunge/">Karston</a>, and Remy<br>📍 <a href="https://maps.app.goo.gl/b5y1FTfYv8vTdrdj6">General Grant Tree (Sequoia National Park), CA</a>',
+  },
+];
+
+const selected = images[Math.floor(Math.random() * images.length)];
+const figure = document.querySelector(".gallery-figure");
+const photo = document.querySelector("[data-gallery-image]");
+const caption = document.querySelector("[data-gallery-caption]");
+const baseUrl = window.siteBaseUrl || "";
+
+if (figure && photo && caption) {
+  photo.alt = selected.alt;
+  photo.style.objectPosition = selected.focus;
+  photo.style.transformOrigin = selected.focus;
+  photo.style.transform = `scale(${selected.zoom || 1})`;
+  caption.innerHTML = selected.caption;
+
+  for (const link of caption.querySelectorAll("a")) {
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
   }
-]
 
-const selected = images[Math.floor(Math.random() * images.length)]
-const photo = document.querySelector('[data-gallery-image]')
-const caption = document.querySelector('[data-gallery-caption]')
-const baseUrl = window.siteBaseUrl || ''
+  const reveal = () => {
+    window.requestAnimationFrame(() => figure.classList.add("is-ready"));
+  };
 
-if (photo && caption) {
-  photo.src = `${baseUrl}${selected.src}`
-  photo.alt = selected.alt
-  photo.style.objectPosition = selected.focus
-  photo.style.transformOrigin = selected.focus
-  photo.style.transform = `scale(${selected.zoom || 1})`
-  caption.innerHTML = selected.caption
+  photo.addEventListener(
+    "error",
+    () => {
+      console.error(`Gallery image failed to load: ${selected.src}`);
+    },
+    { once: true },
+  );
 
-  for (const link of caption.querySelectorAll('a')) {
-    link.target = '_blank'
-    link.rel = 'noopener noreferrer'
+  photo.src = `${baseUrl}${selected.src}`;
+
+  if (typeof photo.decode === "function") {
+    photo
+      .decode()
+      .then(reveal)
+      .catch(() => {
+        if (photo.complete && photo.naturalWidth > 0) reveal();
+      });
+  } else {
+    photo.addEventListener("load", reveal, { once: true });
   }
 }

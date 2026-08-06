@@ -1,122 +1,241 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Gallery focus tool</title>
     <style>
-      body { max-width: 720px; margin: 40px auto; padding: 0 20px; font: 16px/1.5 Arial, sans-serif; color: #111; }
-      label, output { display: block; margin: 18px 0 8px; }
-      select, button { font: inherit; padding: 7px 10px; }
-      input[type="range"] { width: min(420px, 100%); }
-      .frame { width: 320px; height: 320px; border-radius: 50%; overflow: hidden; background: #eee; cursor: grab; touch-action: none; }
-      .frame:active { cursor: grabbing; }
-      img { width: 100%; height: 100%; object-fit: cover; pointer-events: none; user-select: none; }
-      code { padding: 3px 6px; background: #f1f1f1; }
-      p { max-width: 620px; }
-      .controls { margin-top: 24px; }
-      .control-value { color: #666; font-variant-numeric: tabular-nums; }
+      body {
+        max-width: 720px;
+        margin: 40px auto;
+        padding: 0 20px;
+        font:
+          16px/1.5 Arial,
+          sans-serif;
+        color: #111;
+      }
+      label,
+      output {
+        display: block;
+        margin: 18px 0 8px;
+      }
+      select,
+      button {
+        font: inherit;
+        padding: 7px 10px;
+      }
+      input[type="range"] {
+        width: min(420px, 100%);
+      }
+      .frame {
+        width: 320px;
+        height: 320px;
+        border-radius: 50%;
+        overflow: hidden;
+        background: #eee;
+        cursor: grab;
+        touch-action: none;
+      }
+      .frame:active {
+        cursor: grabbing;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        pointer-events: none;
+        user-select: none;
+      }
+      code {
+        padding: 3px 6px;
+        background: #f1f1f1;
+      }
+      p {
+        max-width: 620px;
+      }
+      .controls {
+        margin-top: 24px;
+      }
+      .control-value {
+        color: #666;
+        font-variant-numeric: tabular-nums;
+      }
     </style>
   </head>
   <body>
     <h1>Gallery focus tool</h1>
-    <p>Select a photo, drag it in any direction to reposition it, and use the zoom control or mouse wheel to zoom. The horizontal and vertical controls provide precise scrolling. Copy both resulting settings into that photo's entry in <code>gallery.js</code>. This tool is excluded from the deployed Jekyll site.</p>
+    <p>
+      Select a photo, drag it in any direction to reposition it, and use the
+      zoom control or mouse wheel to zoom. The horizontal and vertical controls
+      provide precise scrolling. Copy both resulting settings into that photo's
+      entry in <code>gallery.js</code>. This tool is excluded from the deployed
+      Jekyll site.
+    </p>
 
     <label for="photo">Photo</label>
     <select id="photo"></select>
 
-    <div class="frame" id="frame"><img id="preview" alt="Selected gallery preview"></div>
+    <div class="frame" id="frame">
+      <img id="preview" alt="Selected gallery preview" />
+    </div>
 
     <div class="controls">
-      <label for="horizontal">Horizontal position <span class="control-value" id="horizontal-value">50%</span></label>
-      <input id="horizontal" type="range" min="0" max="100" step="1" value="50">
+      <label for="horizontal"
+        >Horizontal position
+        <span class="control-value" id="horizontal-value">50%</span></label
+      >
+      <input
+        id="horizontal"
+        type="range"
+        min="0"
+        max="100"
+        step="1"
+        value="50"
+      />
 
-      <label for="vertical">Vertical position <span class="control-value" id="vertical-value">50%</span></label>
-      <input id="vertical" type="range" min="0" max="100" step="1" value="50">
+      <label for="vertical"
+        >Vertical position
+        <span class="control-value" id="vertical-value">50%</span></label
+      >
+      <input id="vertical" type="range" min="0" max="100" step="1" value="50" />
 
-      <label for="zoom">Zoom <span class="control-value" id="zoom-value">1.00×</span></label>
-      <input id="zoom" type="range" min="1" max="3" step="0.01" value="1">
+      <label for="zoom"
+        >Zoom <span class="control-value" id="zoom-value">1.00×</span></label
+      >
+      <input id="zoom" type="range" min="1" max="3" step="0.01" value="1" />
     </div>
 
     <output>Settings: <code id="value">focus: '50% 50%', zoom: 1</code></output>
     <button id="copy" type="button">Copy settings</button>
 
     <script>
-      const photos = ['ts.jpeg', 'ts2.jpeg', 'ts3.jpeg', 'ts4.jpeg', 'ts5.JPG', 'ts6.JPG']
+      const photos = [
+        "ts.jpeg",
+        "ts2.jpeg",
+        "ts3.jpeg",
+        "ts4.jpeg",
+        "ts5.JPG",
+        "ts6.JPG",
+        "ts7.JPG",
+      ];
       const positions = {
-        'ts.jpeg': { x: 50, y: 50, zoom: 1 },
-        'ts2.jpeg': { x: 100, y: 51, zoom: 1 },
-        'ts3.jpeg': { x: 65, y: 49, zoom: 1 },
-        'ts4.jpeg': { x: 56, y: 41, zoom: 1 },
-        'ts5.JPG': { x: 50, y: 66, zoom: 1 },
-        'ts6.JPG': { x: 56, y: 41, zoom: 1 }
-      }
-      const select = document.querySelector('#photo')
-      const preview = document.querySelector('#preview')
-      const frame = document.querySelector('#frame')
-      const value = document.querySelector('#value')
-      const horizontal = document.querySelector('#horizontal')
-      const vertical = document.querySelector('#vertical')
-      const zoom = document.querySelector('#zoom')
-      const horizontalValue = document.querySelector('#horizontal-value')
-      const verticalValue = document.querySelector('#vertical-value')
-      const zoomValue = document.querySelector('#zoom-value')
-      let dragStart = null
+        "ts.jpeg": { x: 50, y: 50, zoom: 1 },
+        "ts2.jpeg": { x: 100, y: 51, zoom: 1 },
+        "ts3.jpeg": { x: 65, y: 49, zoom: 1 },
+        "ts4.jpeg": { x: 56, y: 41, zoom: 1 },
+        "ts5.JPG": { x: 50, y: 66, zoom: 1 },
+        "ts6.JPG": { x: 56, y: 41, zoom: 1 },
+        "ts7.JPG": { x: 50, y: 57, zoom: 2.23 },
+      };
+      const select = document.querySelector("#photo");
+      const preview = document.querySelector("#preview");
+      const frame = document.querySelector("#frame");
+      const value = document.querySelector("#value");
+      const horizontal = document.querySelector("#horizontal");
+      const vertical = document.querySelector("#vertical");
+      const zoom = document.querySelector("#zoom");
+      const horizontalValue = document.querySelector("#horizontal-value");
+      const verticalValue = document.querySelector("#vertical-value");
+      const zoomValue = document.querySelector("#zoom-value");
+      let dragStart = null;
 
-      for (const name of photos) select.add(new Option(name, name))
+      for (const name of photos) select.add(new Option(name, name));
 
       function render() {
-        const position = positions[select.value]
-        preview.src = `/assets/images/${select.value}`
-        preview.style.objectPosition = `${position.x}% ${position.y}%`
-        preview.style.transformOrigin = `${position.x}% ${position.y}%`
-        preview.style.transform = `scale(${position.zoom})`
-        horizontal.value = position.x
-        vertical.value = position.y
-        zoom.value = position.zoom
-        horizontalValue.textContent = `${position.x}%`
-        verticalValue.textContent = `${position.y}%`
-        zoomValue.textContent = `${position.zoom.toFixed(2)}×`
-        value.textContent = `focus: '${position.x}% ${position.y}%', zoom: ${Number(position.zoom.toFixed(2))}`
+        const position = positions[select.value];
+        preview.src = `/assets/images/${select.value}`;
+        preview.style.objectPosition = `${position.x}% ${position.y}%`;
+        preview.style.transformOrigin = `${position.x}% ${position.y}%`;
+        preview.style.transform = `scale(${position.zoom})`;
+        horizontal.value = position.x;
+        vertical.value = position.y;
+        zoom.value = position.zoom;
+        horizontalValue.textContent = `${position.x}%`;
+        verticalValue.textContent = `${position.y}%`;
+        zoomValue.textContent = `${position.zoom.toFixed(2)}×`;
+        value.textContent = `focus: '${position.x}% ${position.y}%', zoom: ${Number(position.zoom.toFixed(2))}`;
       }
 
-      select.addEventListener('change', render)
-      frame.addEventListener('pointerdown', event => {
-        const position = positions[select.value]
-        dragStart = { pointerX: event.clientX, pointerY: event.clientY, x: position.x, y: position.y }
-        frame.setPointerCapture(event.pointerId)
-      })
-      frame.addEventListener('pointermove', event => {
-        if (!dragStart) return
-        const position = positions[select.value]
-        position.x = Math.round(Math.max(0, Math.min(100, dragStart.x - (event.clientX - dragStart.pointerX) / frame.clientWidth * 100)))
-        position.y = Math.round(Math.max(0, Math.min(100, dragStart.y - (event.clientY - dragStart.pointerY) / frame.clientHeight * 100)))
-        render()
-      })
-      frame.addEventListener('pointerup', () => { dragStart = null })
-      frame.addEventListener('pointercancel', () => { dragStart = null })
-      frame.addEventListener('wheel', event => {
-        event.preventDefault()
-        const position = positions[select.value]
-        position.zoom = Math.max(1, Math.min(3, Number((position.zoom - event.deltaY * 0.001).toFixed(2))))
-        render()
-      }, { passive: false })
+      select.addEventListener("change", render);
+      frame.addEventListener("pointerdown", (event) => {
+        const position = positions[select.value];
+        dragStart = {
+          pointerX: event.clientX,
+          pointerY: event.clientY,
+          x: position.x,
+          y: position.y,
+        };
+        frame.setPointerCapture(event.pointerId);
+      });
+      frame.addEventListener("pointermove", (event) => {
+        if (!dragStart) return;
+        const position = positions[select.value];
+        position.x = Math.round(
+          Math.max(
+            0,
+            Math.min(
+              100,
+              dragStart.x -
+                ((event.clientX - dragStart.pointerX) / frame.clientWidth) *
+                  100,
+            ),
+          ),
+        );
+        position.y = Math.round(
+          Math.max(
+            0,
+            Math.min(
+              100,
+              dragStart.y -
+                ((event.clientY - dragStart.pointerY) / frame.clientHeight) *
+                  100,
+            ),
+          ),
+        );
+        render();
+      });
+      frame.addEventListener("pointerup", () => {
+        dragStart = null;
+      });
+      frame.addEventListener("pointercancel", () => {
+        dragStart = null;
+      });
+      frame.addEventListener(
+        "wheel",
+        (event) => {
+          event.preventDefault();
+          const position = positions[select.value];
+          position.zoom = Math.max(
+            1,
+            Math.min(
+              3,
+              Number((position.zoom - event.deltaY * 0.001).toFixed(2)),
+            ),
+          );
+          render();
+        },
+        { passive: false },
+      );
 
-      horizontal.addEventListener('input', () => {
-        positions[select.value].x = Number(horizontal.value)
-        render()
-      })
-      vertical.addEventListener('input', () => {
-        positions[select.value].y = Number(vertical.value)
-        render()
-      })
-      zoom.addEventListener('input', () => {
-        positions[select.value].zoom = Number(zoom.value)
-        render()
-      })
+      horizontal.addEventListener("input", () => {
+        positions[select.value].x = Number(horizontal.value);
+        render();
+      });
+      vertical.addEventListener("input", () => {
+        positions[select.value].y = Number(vertical.value);
+        render();
+      });
+      zoom.addEventListener("input", () => {
+        positions[select.value].zoom = Number(zoom.value);
+        render();
+      });
 
-      document.querySelector('#copy').addEventListener('click', async () => navigator.clipboard.writeText(value.textContent))
-      render()
+      document
+        .querySelector("#copy")
+        .addEventListener("click", async () =>
+          navigator.clipboard.writeText(value.textContent),
+        );
+      render();
     </script>
   </body>
 </html>
